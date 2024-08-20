@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>project.title</title>
+
+    <link rel="stylesheet" href="src/style.css">
+    
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.5.2/jquery.min.js" type="text/javascript" charset="utf-8"></script>
+    <script src="libs/jquery.localize.min.js" type="text/javascript" charset="utf-8"></script>
+</head>
+
+<body>
+
+    <div class="menu" id="menu-main">
+        <h1 data-localize="project.title">project.title</h1>
+        <button class="menu-button" onclick="menuContinue()">menu.continue</button>
+        <button class="menu-button" onclick="menuScenarios()">menu.scenarios</button>
+        <button class="menu-button" onclick="menuLoad()">menu.load</button>
+        <button class="menu-button" onclick="menuCompendium()">menu.compendium</button>
+        <button class="menu-button" onclick="menuOptions()">menu.options</button>
+        <button class="menu-button" onclick="menuCredits()">menu.credits</button>
+    </div>
+
+    <div id="menu-scenarios" style="display: none;">
+        <h2>menu.scenarios</h2>
+        <button class="menu-button" onclick="mainMenu()">menu.back</button>
+        <div id="scenario-file">
+            <!-- description, image, difficulty, length, character, squad -->
+            <!-- options for customization -->
+            <!-- <button class="load-scenario" onclick="loadScenario()">load.scenario</button> -->
+        </div>
+    </div>
+
+    <div id="menu-load" style="display: none;">
+        <h2>project.tales.title</h2>
+        <button class="menu-button" onclick="mainMenu()">menu.back</button>
+        <div id="save-file">
+            <!-- firstname, lastname, scenario, total game time, last session time -->
+            <!-- <button class="load-file" onclick="loadFile()">load.file</button> -->
+        </div>
+    </div>
+
+    <div id="menu-compendium" style="display: none;">
+        <h2>menu.compendium</h2>
+        <button class="menu-button" onclick="mainMenu()">menu.back</button>
+        <div id="data-record">
+            <!-- basically whole data record screen -->
+        </div>
+    </div>
+
+    <div id="menu-options" style="display: none;">
+        <h2>menu.options</h2>
+        <button class="menu-button" onclick="mainMenu()">menu.back</button>
+        <div id="option-section">
+            <!-- option -->
+        </div>
+    </div>
+
+    <div id="menu-credits" style="display: none;">
+        <h2>menu.credits</h2>
+        <button class="menu-button" onclick="mainMenu()">menu.back</button>
+        <div id="credits">
+            <!-- credits -->
+        </div>
+    </div>
+
+    <div id="local-map" style="display: none;">
+         <!-- local map interface and content -->
+    </div>
+
+
+    <script src="src/app.js"></script>
+    <script type="text/javascript" charset="utf-8">
+        $(function(){
+          var opts = { language: "en", pathPrefix: "locales/en", skipLanguage: "en-US" };
+          $("[data-localize]").localize("interface", opts)
+        })
+      </script>
+</body>
+
+</html>
